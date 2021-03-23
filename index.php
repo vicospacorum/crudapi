@@ -5,7 +5,7 @@
         <img src="img/sunflower.jpg" alt="Girassol" style="width:40%" class="w3-circle w3-margin-top">
     </div>
     
-    <form class="w3-container " action="loginAction.php" method="post">
+    <form class="w3-container " action="login.php" method="post">
         <div class="w3-section">
             <label style="font-weight: bold;">Usuário</label>
             <input class="w3-input w3-border w3-marginbottom" type="text" placeholder="Digite o nome" name="txtNome" required>
