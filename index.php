@@ -18,4 +18,4 @@
     </form>
     <br>
 </div>
-<?php require_once ('rodape.php'); ?>
+<?php require_once ('footer.php'); ?>
