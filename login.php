@@ -1,3 +1,4 @@
+<?php require_once ('verify.php'); ?>
 <?php require_once ('header.php'); ?>
 <div class="w3-padding w3-content w3-text-grey w3-third w3-displaymiddle">
     <?php
@@ -19,7 +20,7 @@
                 
                 echo '
                     <a href="listagem.php">
-                        <h1 class="w3-button w3-teal">'.$nome.', Seja Bem-Vinde! </h1>
+                        <h1 class="w3-center w3-button w3-teal">Controle de Tutorias</h1>
                     </a>
                 ';
                 $_SESSION['logado'] = $nome;
