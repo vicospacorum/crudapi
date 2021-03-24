@@ -3,13 +3,13 @@
         
         <div class="w3-container w3-col w3-row w3-center ">
             <div class="w3-col w3-button w3-blue w3-cell w3-round-large w3-marginright w3-margin-left" style="width:23%;">
-                <a href="cadastro.php" style="text-decoration: none;">
+                <a href="add.php" style="text-decoration: none;">
                     <i class="fa fa-cube" style="font-size: 5em"></i>
                     <p style="font-size: 2em">Adicionar</p>
                 </a>
             </div>
 
-            <div class="w3-col w3-button w3-red w3-cell w3-round-large w3-marginright w3-text-white" style="width:23%;">
+            <!-- div class="w3-col w3-button w3-red w3-cell w3-round-large w3-marginright w3-text-white" style="width:23%;">
                 <a href="listar.php" style="text-decoration: none;">
                     <i class=" fa fa-trash" style="font-size: 5em"></i>
                     <p style="font-size: 2em">Remover</p>
@@ -28,6 +28,6 @@
                     <i class=" fa fa-list-alt" style="font-size: 5em"></i>
                     <p style="font-size: 2em">Listar</p>
                 </a>
-            </div>
+            </div -->
         </div>
         <?php require_once ('footer.php'); ?>
