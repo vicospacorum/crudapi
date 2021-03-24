@@ -21,13 +21,13 @@
                     <i class=" fa fa-refresh" style="font-size: 5em"></i>
                     <p style="font-size: 2em">Atualizar</p>
                 </a>
-            </div>
+            </div -->
             
             <div class="w3-col w3-button w3-indigo w3-cell w3-round-large w3-marginright" style="width:23%;">
                 <a href="listar.php" style="text-decoration: none;">
                     <i class=" fa fa-list-alt" style="font-size: 5em"></i>
                     <p style="font-size: 2em">Listar</p>
                 </a>
-            </div -->
+            </div>
         </div>
         <?php require_once ('footer.php'); ?>
