@@ -3,13 +3,13 @@
             <?php
                 require_once 'connectDB.php';
 
-                $sql = "INSERT INTO tutorias (id, Tutor, Aluno, Data, Gravacao, Link) VALUES ('" . $_POST['txtID'] . "', '" . $_POST['txtTutor'] . "', '" . $_POST['txtAluno'] . "', '" . $_POST['txtData'] . "', '" . $_POST['txtGrava'] . "', '" . $_POST ['txtLink'] . "')";
+                $sql = "INSERT INTO tutorias (id, Tutor, Aluno, Data, Gravacao, Link) VALUES ('" . $_POST['txtID'] . "', '" . $_POST['txtTutor'] . "', '" . $_POST['txtAluno'] . "', '" . $_POST['txtData'] . "', '" . $_POST['txtGrava'] . "', '" . $_POST ['txtLink'] . "');";
                 
                 try{
                     $resultado = $conecta->query($sql);
                     
-                    echo '<a href="index.php">
-                            <h1 class="w3-button w3-blue">Tutoria Salvo com sucesso! </h1>
+                    echo '<a href="listagem.php">
+                            <h1 class="w3-button w3-blue">Tutoria Salva com sucesso! </h1>
                         </a>';
                 }catch(PDOException $e){
                     echo '<a href="index.php">

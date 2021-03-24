@@ -8,7 +8,7 @@
 
             <form action="adding.php" class="w3-container" method='post'>
                 <label class="w3-text-orange" style="fontweight: bold;">Id</label>
-                <input name="txtID" class="w3-input w3--light-grey w3-border">
+                <input name="txtID" class="w3-input w3-light-grey w3-border">
                 <br>
                 <label class="w3-text-orange" style="fontweight: bold;">Tutor</label>
                 <input name="txtTutor" class="w3-input w3-light-grey w3-border">
