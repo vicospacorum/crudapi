@@ -1,4 +1,3 @@
-<?php require_once ('verify.php'); ?>
 <?php require_once ('header.php'); ?>
 <div class="w3-padding w3-content w3-text-grey w3-third w3-displaymiddle">
     <?php
@@ -24,14 +23,20 @@
                     </a>
                 ';
                 $_SESSION['logado'] = $nome;
+
+                sleep(2000);
+                header("location:listagem.php");
             }
             else
             {
                 echo '
                     <a href="index.php">
                         <h1 class="w3-button w3-teal">Login Inválido! </h1>
-                    </a>
+                    </a
                 ';
+
+                sleep(2000);
+                header("location:index.php");
             }
         }
         else
