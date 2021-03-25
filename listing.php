@@ -13,7 +13,6 @@
             <table class="w3-table-all w3-centered w3-text-black">
                 <thead>
                     <tr class="w3-center w3-yellow">
-                        <th>ID</th>
                         <th>Tutor</th>
                         <th>Aluno</th>
                         <th>Data</th>
@@ -25,7 +24,7 @@
                 <thead>
     ';
                 
-    $sql = "SELECT * FROM tutorias" ;
+    $sql = "SELECT * FROM tutorias WHERE Atualizado = 1" ;
     try {
         
         $resultado = $conecta->query($sql);
@@ -33,7 +32,6 @@
         if($resultado != null) {
             foreach($resultado as $linha) {
                 echo '<tr>';
-                echo '<td>'.$linha['Id'].'</td>';
                 echo '<td>'.$linha['Tutor'].'</td>';
                 echo '<td>'.$linha['Aluno'].'</td>';
                 echo '<td>'.$linha['Data'].'</td>';
