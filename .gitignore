@@ -1,1 +1,3 @@
-connectDB.php
+connectDB
+*.sql
+*.xml

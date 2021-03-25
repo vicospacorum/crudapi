@@ -17,15 +17,17 @@
                         <th>Tutor</th>
                         <th>Aluno</th>
                         <th>Data</th>
+                        <th>Duração</th>
                         <th>Gravação</th>
+                        <!-- th>Relatório (Excel)</th -->
                         <!-- th>Atualizar</th -->
                     </tr>
                 <thead>
     ';
                 
     $sql = "SELECT * FROM tutorias" ;
-                
     try {
+        
         $resultado = $conecta->query($sql);
                 
         if($resultado != null) {
@@ -35,7 +37,8 @@
                 echo '<td>'.$linha['Tutor'].'</td>';
                 echo '<td>'.$linha['Aluno'].'</td>';
                 echo '<td>'.$linha['Data'].'</td>';
-                echo '<td>'.$linha['Link'].'</td>';
+                echo '<td>'.$linha['Duracao'].'</td>';
+                echo '<td><a href="'.$linha['Link'].'"  target="_blank">Gravação</a></td>';
                 //echo '<td><a href="excluir.php?id='.$linha['idproduto'].'&nome='.$linha['nome'].'&preco='.$linha['preco'].'&quantidade='.$linha['quantidade'].'"><i class="fa fa-user-times w3-large w3-text-orange"></i> </a></td>';
                 //echo '<td><a href="atualizar.php?id='.$linha['idproduto'].'&nome='.$linha['nome'].'&preco='.$linha['preco'].'&quantidade='.$linha['quantidade'].'"><i class="fa fa-refresh w3-large w3-text-orange"></i> </a></td>';
                 echo '</tr>';
