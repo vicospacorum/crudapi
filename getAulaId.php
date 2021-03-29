@@ -16,12 +16,22 @@
         //$xml->meetings->meeting->meetingID;
         $Id = (string) $sala->meetingID;
         $IdInterno = (string) $sala->internalMeetingID;
+        $DataHora = (int) $sala->startTime;
+
+        echo $DataHora;
+        echo "<br>";
+        $DataHora /= 1000;
+        $DataHora = (int) $DataHora;
+        echo $DataHora;
+        echo "<hr>";
 
         if (!empty($IdInterno))
         {
             require_once 'connectDB.php';
 
-            $sql = "INSERT IGNORE INTO tutorias (IdInterno, Id) VALUES ('" . $IdInterno . "', 'hellatech_" . $Id . "');";
+            $sql = "INSERT IGNORE INTO tutorias (IdInterno, Id, Inicio) VALUES ('" . $IdInterno . "', '" . $Id . "', " . $DataHora . ");";                                   
+            echo $sql;
+            echo "<hr>";
             
             try
             {
@@ -39,5 +49,6 @@
         {
             echo "Nenhuma Sessão em Andamento";
         }
+        
     }
 ?>

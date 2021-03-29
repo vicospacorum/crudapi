@@ -50,39 +50,39 @@
                 <thead>
     ';
     
-    $sql = "SELECT * FROM tutorias WHERE Atualizado = 1" ;
+    $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM `tutorias` WHERE Atualizado = 1";
 
     if (isset($_GET['tutor']))
     {   
         if ($_GET['tutor'] == 1)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor ASC";
         }
         elseif ($_GET['tutor'] == 0)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor DESC";
         }
     }
     elseif (isset($_GET['aluno']))
     {
         if ($_GET['aluno'] == 1)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno ASC";
         }
         elseif ($_GET['Aluno'] == 0)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno DESC";
         }
     }
     elseif (isset($_GET['data']))
     {
         if ($_GET['data'] == 1)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Data ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio ASC";
         }
         elseif ($_GET['data'] == 0)
         {
-            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Data DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio DESC";
         }
     }
 
@@ -95,7 +95,7 @@
                 echo '<tr>';
                 echo '<td>'.$linha['Tutor'].'</td>';
                 echo '<td>'.$linha['Aluno'].'</td>';
-                echo '<td>'.$linha['Data'].'</td>';
+                echo '<td>'.$linha['Inicio'].'</td>';
                 echo '<td>'.$linha['Duracao'].'</td>';
                 echo '<td><a href="'.$linha['Link'].'"  target="_blank">Gravação</a></td>';
                 //echo '<td><a href="excluir.php?id='.$linha['idproduto'].'&nome='.$linha['nome'].'&preco='.$linha['preco'].'&quantidade='.$linha['quantidade'].'"><i class="fa fa-user-times w3-large w3-text-orange"></i> </a></td>';
