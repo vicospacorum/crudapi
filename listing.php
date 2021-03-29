@@ -13,18 +13,79 @@
             <table class="w3-table-all w3-centered w3-text-black">
                 <thead>
                     <tr class="w3-center w3-yellow">
-                        <th>Tutor</th>
-                        <th>Aluno</th>
-                        <th>Data</th>
-                        <th>Duração</th>
+                        <th>
+                            Tutor
+                            <a href="listing.php?tutor=1">
+                                <i class="fa fa-arrow-circle-up w3-small w3-button" style="padding: 0px 0px 0px 3px"></i>
+                            </a>
+                            <a href="listing.php?tutor=0">
+                                <i class="fa fa-arrow-circle-down w3-small w3-button"  style="padding: 0px"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Aluno
+                            <a href="listing.php?aluno=1">
+                                <i class="fa fa-arrow-circle-up w3-small w3-button" style="padding: 0px 0px 0px 3px"></i>
+                            </a>
+                            <a href="listing.php?aluno=0">
+                                <i class="fa fa-arrow-circle-down w3-small w3-button"  style="padding: 0px"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Data
+                            <a href="listing.php?data=1">
+                                <i class="fa fa-arrow-circle-up w3-small w3-button" style="padding: 0px 0px 0px 3px"></i>
+                            </a>
+                            <a href="listing.php?data=0">
+                                <i class="fa fa-arrow-circle-down w3-small w3-button"  style="padding: 0px"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Duração
+                        </th>
                         <th>Gravação</th>
                         <!-- th>Relatório (Excel)</th -->
                         <!-- th>Atualizar</th -->
                     </tr>
                 <thead>
     ';
-                
+    
     $sql = "SELECT * FROM tutorias WHERE Atualizado = 1" ;
+
+    if (isset($_GET['tutor']))
+    {   
+        if ($_GET['tutor'] == 1)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor ASC";
+        }
+        elseif ($_GET['tutor'] == 0)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor DESC";
+        }
+    }
+    elseif (isset($_GET['aluno']))
+    {
+        if ($_GET['aluno'] == 1)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno ASC";
+        }
+        elseif ($_GET['Aluno'] == 0)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno DESC";
+        }
+    }
+    elseif (isset($_GET['data']))
+    {
+        if ($_GET['data'] == 1)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Data ASC";
+        }
+        elseif ($_GET['data'] == 0)
+        {
+            $sql = "SELECT * FROM tutorias WHERE Atualizado = 1 ORDER BY Data DESC";
+        }
+    }
+
     try {
         
         $resultado = $conecta->query($sql);
