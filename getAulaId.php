@@ -11,29 +11,33 @@
     print_r($xml);
 
     echo "<hr>";
-    $IdSala = (string) $xml->meetings->meeting->meetingID;
-    $IdInterno = (string) $xml->meetings->meeting->internalMeetingID;
-
-    if (!empty($IdInterno))
+    foreach($xml->meetings->meeting as $sala)
     {
-        require_once 'connectDB.php';
+        //$xml->meetings->meeting->meetingID;
+        $Id = (string) $sala->meetingID;
+        $IdInterno = (string) $sala->internalMeetingID;
 
-        $sql = "INSERT INTO tutorias (IdInterno, Id) VALUES ('" . $IdInterno . "', 'hellatech_" . $IdSala . "');";
-        
-        try
+        if (!empty($IdInterno))
         {
-            $resultado = $conecta->query($sql);
+            require_once 'connectDB.php';
+
+            $sql = "INSERT IGNORE INTO tutorias (IdInterno, Id) VALUES ('" . $IdInterno . "', 'hellatech_" . $Id . "');";
             
-            echo 'Id inserido com sucesso!';
+            try
+            {
+                $resultado = $conecta->query($sql);
+                
+                echo 'Id inserido com sucesso!';
+            }
+            catch(PDOException $e)
+            {
+                echo 'ERRO!';
+                echo $e;
+            }
         }
-        catch(PDOException $e)
+        else
         {
-            echo 'ERRO!';
-            echo $e;
+            echo "Nenhuma Sessão em Andamento";
         }
-    }
-    else
-    {
-        echo "Nenhuma Sessão em Andamento";
     }
 ?>
