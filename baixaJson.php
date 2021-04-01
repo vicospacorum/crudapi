@@ -10,7 +10,7 @@
         if($resultado != null) {
             foreach($resultado as $linha) {
                 // Initialize a file URL to the variable
-                $url = rawurldecode($linha[URL]);
+                $url = rawurldecode($linha['URL']);
                 
                 // Initialize the cURL session
                 $ch = curl_init($url);
