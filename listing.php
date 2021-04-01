@@ -50,39 +50,39 @@
                 <thead>
     ';
     
-    $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM `tutorias` WHERE Atualizado = 1";
+    $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM `tutorias` WHERE Atualizado = 1";
 
     if (isset($_GET['tutor']))
     {   
         if ($_GET['tutor'] == 1)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor ASC";
         }
         elseif ($_GET['tutor'] == 0)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Tutor DESC";
         }
     }
     elseif (isset($_GET['aluno']))
     {
         if ($_GET['aluno'] == 1)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno ASC";
         }
         elseif ($_GET['Aluno'] == 0)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Aluno DESC";
         }
     }
     elseif (isset($_GET['data']))
     {
         if ($_GET['data'] == 1)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio ASC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio ASC";
         }
         elseif ($_GET['data'] == 0)
         {
-            $sql = "SELECT `Tutor`, `Aluno`, from_unixtime(`Inicio`) as Inicio, Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio DESC";
+            $sql = "SELECT `Tutor`, `Aluno`, FROM_UNIXTIME(`Inicio`) as Inicio, SEC_TO_TIME(Duracao) as Duracao FROM tutorias WHERE Atualizado = 1 ORDER BY Inicio DESC";
         }
     }
 
